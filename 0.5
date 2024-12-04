@@ -1,0 +1,23 @@
+sequenceDiagram
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes/spa
+    activate Server
+    Server-->>Browser: SPA HTML document
+    deactivate Server
+
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate Server
+    Server-->>Browser: css file
+    deactivate Server
+
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate Server
+    Server-->>Browser: JavaScript file for spa
+    deactivate Server
+
+    Browser->>Browser: Javascript starts the json parse command
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Server
+    Server-->>Browser: [{ "content": "", "date": "2024-12-03T117" }, ... ]
+    deactivate Server
+
+    Browser->>Browser: Javascript finishes the json parse and lists. 
