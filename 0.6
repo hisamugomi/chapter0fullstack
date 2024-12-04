@@ -1,5 +1,7 @@
 sequenceDiagram
+
     Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
     activate Server
-    Server-->>Browser: JSON data 
+    Note right of Browser: Javascript on post activates functions to stop the default and just rerender and send JSON
+    Server-->>Browser: JSON data [{ "content": "", "date": "2024-12-03T117" }, ... ]
     deactivate Server
